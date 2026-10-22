@@ -1,0 +1,40 @@
+version: 2
+
+seeds:
+  - name: dq_rules
+    description: Registry of quality rules, each with a dimension, a severity and an accountable owner.
+    meta: {owner: data_engineering, published: true}
+    columns:
+      - name: rule_id
+        data_tests: [unique, not_null]
+      - name: severity
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['blocking', 'major', 'minor', 'info']
+      - name: owner_role
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('data_owners')
+                field: owner_role
+
+  - name: data_owners
+    description: Data roles and what each one is accountable for.
+    meta: {owner: data_engineering, published: true}
+    columns:
+      - name: owner_role
+        data_tests: [unique, not_null]
+
+  - name: glossary
+    description: Business glossary (in French) - the agreed meaning of each term.
+    meta: {owner: owner_product_catalog, published: true}
+    columns:
+      - name: term
+        data_tests: [unique, not_null]
+      - name: owner_role
+        data_tests:
+          - relationships:
+              arguments:
+                to: ref('data_owners')
+                field: owner_role

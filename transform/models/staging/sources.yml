@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: bronze
+    description: Raw Open Food Facts data as loaded by ingest/, all countries.
+    meta:
+      owner: data_engineering
+    tables:
+      - name: products_full
+        description: The full Parquet export, loaded once (ingest/load_full.py).
+        loaded_at_field: "to_timestamp(last_modified_t)"
+      - name: products_delta
+        description: Daily delta exports, one row per product changed that day (ingest/load_delta.py).
+        loaded_at_field: "to_timestamp(last_modified_t)"
+        freshness:
+          warn_after: {count: 2, period: day}
+          error_after: {count: 7, period: day}

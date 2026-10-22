@@ -1,0 +1,7 @@
+duckdb>=2.0
+dbt-duckdb>=1.10
+anthropic>=2.1
+pandas>=2.2
+pyarrow>=17
+matplotlib>=3.9
+pytest>=8

@@ -1,0 +1,30 @@
+version: 2
+
+models:
+  - name: products
+    description: One row per product sold in France (countries tag en:france), latest version, obsolete products removed.
+    meta:
+      owner: owner_product_catalog
+      steward: steward_product_reference
+    columns:
+      - name: code
+        description: Barcode as recorded in Open Food Facts (see glossary "Code-barres"). Not always a valid GTIN.
+        data_tests: [unique, not_null]
+      - name: product_name
+        description: Product name, French version when there is one.
+      - name: brand
+        description: First declared brand, original spelling.
+      - name: brand_key
+        description: Normalised key of the first brand (lower case, dashes), used to group brands.
+      - name: category
+        description: Most specific category tag.
+      - name: unique_scans
+        description: Unique users who scanned the product in the Open Food Facts app; 0 when unknown.
+        data_tests:
+          - value_in_range:
+              arguments:
+                min_value: 0
+      - name: nutriscore_grade
+        description: Nutri-Score grade computed by Open Food Facts (a to e), or a status such as unknown / not-applicable.
+      - name: energy_kcal_100g
+        description: Energy per 100 g or 100 ml as printed on the packaging, in kcal.

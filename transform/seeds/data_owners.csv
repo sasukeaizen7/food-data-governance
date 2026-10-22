@@ -1,0 +1,5 @@
+owner_role,title,responsibility
+owner_product_catalog,Data Owner - Catalogue produits,"Décide de ce qu'est un produit actif, valide les définitions métier, arbitre les priorités de correction."
+steward_product_reference,Data Steward - Référentiel produit,"Garant des identifiants (codes-barres), des doublons et du rapprochement avec les référentiels GS1."
+steward_nutrition,Data Steward - Nutrition,"Garant des valeurs nutritionnelles, du Nutri-Score et de leur cohérence."
+data_engineering,Équipe Data Engineering,"Construit et opère le pipeline, les contrôles et la mise à disposition des données."

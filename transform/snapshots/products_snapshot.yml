@@ -1,0 +1,11 @@
+snapshots:
+  - name: products_snapshot
+    relation: ref('products')
+    description: >
+      History (SCD type 2) of the business fields of each product: a new version is recorded
+      whenever the name, brand, Nutri-Score or a key nutrient changes between two runs.
+    config:
+      unique_key: code
+      strategy: check
+      check_cols: [product_name, brand, category, nutriscore_grade, energy_kcal_100g, fat_100g, sugars_100g, salt_100g]
+      hard_deletes: invalidate

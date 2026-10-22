@@ -1,0 +1,48 @@
+rule_id,code,product_name,brand,unique_scans,trust_level
+R01,06175700,Tartines craquantes au sarrasin imp,Ekibio,1094,untrusted
+R01,06153153,Tartines craquantes quinoa - pois chiche sans gluten,Jardin Bio,587,untrusted
+R01,06110273,Tartines craquantes Sarrasin,Terres et Céréales bio,222,untrusted
+R03,02231401010,Crème de marrons de l’Ardèche Clément Feugier,,1,untrusted
+R03,0002231401010,chesnut spread,clement faugier,0,untrusted
+R04,6111246954461,,jibal,634,caution
+R04,6111099005495,,lilia,495,caution
+R04,5061013962506,,Predator Energy,222,caution
+R05,3560071245719,Emmental fran�ais,Carrefour Classic,52,caution
+R05,8711000527504,Caf� molido mezcla superior,JACOBS DOUWE EGBERTS NL B.V.,6,caution
+R05,3364699340753,Chips Ã Cuire Goã»t Crevettes 1 KG,Red roses,3,caution
+R06,6111180000231,levure pâtisserie,,973,trusted
+R06,6111259092495,Goldium crémeux,,957,trusted
+R06,80176800,Nutella 750g,,632,trusted
+R07,6111099000605,Lio produit,,226,caution
+R07,6111245470047,Hala,,125,trusted
+R07,6111126002909,Raïb banane 900g,Chergui,110,trusted
+R08,3033710073467,"RICORE Original, Café & Chicorée, Boîte 100g",Nestlé,632,caution
+R08,16256866,1848 Chocolat en poudre,Poulain,562,caution
+R08,3228857001378,Brioche moins de sucre,Harry's,559,caution
+R09,3175681110106,germe de blé,Gerblé,260,untrusted
+R09,8410376033267,Digestive Avena,GALLETAS GULLON S.A.,210,untrusted
+R09,3166353931402,Cabillaud sauce Citron riz aux petits légumes,Marie,204,untrusted
+R10,6111162000839,Confiture de fraise,Délicia,676,untrusted
+R10,7610036002737,"Chocolat Noir 72%, Collection Pure",Villars,222,untrusted
+R10,5449000318947,Schweppes citron 45cl,Schweppes,181,untrusted
+R11,6111126002626,Daya Yaourt à Boire Fraise,CHERGUI,122,untrusted
+R11,8008343279963,Pesto a La Genovese,Rummo SpA,94,untrusted
+R11,3168930000020,Lay's Nature,Lay's,91,untrusted
+R12,20995553,Cioccolato Fondente,J.D: Gross,708,untrusted
+R12,6111099000247,Hule D'olive,زيت الزيتون واد سوس,553,untrusted
+R12,4014400400007,Toffifee,Storck,348,untrusted
+R13,6111246721261,Fromage Blanc Nature,Milky Food Professional,3410,caution
+R13,6111018903161,Nescafé Classic,Nescafé,682,caution
+R13,6111099000247,Hule D'olive,زيت الزيتون واد سوس,553,untrusted
+R14,6111246721261,Fromage Blanc Nature,Milky Food Professional,3410,caution
+R14,6111266963207,Kéfir,Jaouda,765,trusted
+R14,4056489007180,Pain complet tranché lidl,Maître Jean Pierre,591,trusted
+R15,6111246721261,Fromage Blanc Nature,Milky Food Professional,3410,caution
+R15,3329770077003,Skyr nature 0%,Yoplait,1149,trusted
+R15,3329770073265,Skyr,YOPLAIT SKYR,374,trusted
+R16,3254560414464,Oranges,,20,trusted
+R16,5000453122811,"Skin, hair and nails",,18,trusted
+R16,0211111112111,Soup & casserole mix,Marks & Spencer,17,trusted
+R17,3017620422003,Nutella,Nutella,1064,caution
+R17,3228857000852,Pain de mie 100% mie nature,Harrys,491,caution
+R17,7613035694989,Boulettes aux Légumes,Garden Gourmet,295,caution

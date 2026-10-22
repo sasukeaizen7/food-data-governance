@@ -1,0 +1,39 @@
+name: food_data_governance
+version: "1.0.0"
+config-version: 2
+profile: food_data_governance
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+test-paths: ["tests"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+vars:
+  stale_after_years: 5        # a product untouched for longer is "stale"
+  min_brand_products: 50      # brands smaller than this are left out of brand rankings
+
+models:
+  food_data_governance:
+    staging:
+      +schema: staging
+      +materialized: view
+    silver:
+      +schema: silver
+      +materialized: table
+    quality:
+      +schema: quality
+      +materialized: table
+    gold:
+      +schema: gold
+      +materialized: table
+
+seeds:
+  food_data_governance:
+    +schema: governance
+
+snapshots:
+  food_data_governance:
+    +target_schema: snapshots

@@ -1,0 +1,190 @@
+version: 2
+
+models:
+  - name: fct_products
+    description: >
+      Products sold in France with their quality status. This is the table to use for analysis:
+      filter on trust_level = 'trusted' for figures that must be right, or report the share of
+      untrusted products in any figure you publish.
+    meta:
+      owner: owner_product_catalog
+      steward: steward_nutrition
+      published: true
+    columns:
+      - name: code
+        description: Barcode (see glossary "Code-barres").
+        data_tests: [unique, not_null]
+      - name: product_name
+        description: Product name, French version when there is one.
+      - name: brand
+        description: First declared brand, original spelling.
+      - name: brand_key
+        description: Normalised brand key; join key to brand_quality.
+      - name: category
+        description: Most specific category, without the language prefix (e.g. "dark-chocolates").
+      - name: categories
+        description: >
+          Every category of the product, from the broadest to the most specific, as tags
+          (e.g. ['en:spreads', 'en:sweet-spreads', 'en:hazelnut-spreads']). Filter a family of
+          products with list_contains(categories, 'en:spreads').
+      - name: created_at
+        description: When the record was created in Open Food Facts.
+      - name: last_modified_at
+        description: Last change to the record.
+      - name: unique_scans
+        description: Unique users who scanned the product; a measure of how much the record is used.
+      - name: nutriscore_grade
+        description: Nutri-Score grade a to e computed by Open Food Facts; other values mean not computed.
+      - name: nutriscore_score
+        description: Nutri-Score points behind the grade (lower is better).
+      - name: nova_group
+        description: NOVA processing group, 1 (unprocessed) to 4 (ultra-processed).
+      - name: energy_kcal_100g
+        description: Energy per 100 g / 100 ml, kcal, as printed on the packaging.
+      - name: fat_100g
+        description: Fat per 100 g / 100 ml, grams.
+      - name: saturated_fat_100g
+        description: Saturated fat per 100 g / 100 ml, grams.
+      - name: carbohydrates_100g
+        description: Carbohydrates per 100 g / 100 ml, grams.
+      - name: sugars_100g
+        description: Sugars per 100 g / 100 ml, grams.
+      - name: fiber_100g
+        description: Fibre per 100 g / 100 ml, grams.
+      - name: proteins_100g
+        description: Proteins per 100 g / 100 ml, grams.
+      - name: salt_100g
+        description: Salt per 100 g / 100 ml, grams.
+      - name: failed_rules
+        description: Ids of the quality rules the product fails (see dq_rule_summary), info-level rules excluded.
+      - name: n_blocking
+        description: Number of failed blocking rules.
+      - name: n_major
+        description: Number of failed major rules.
+      - name: n_minor
+        description: Number of failed minor rules.
+      - name: is_internal_code
+        description: True when the barcode is an in-store code (GS1 restricted circulation), not a universal product id.
+      - name: trust_level
+        description: trusted (no blocking or major issue), caution (at least one major issue), untrusted (at least one blocking issue).
+        data_tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['trusted', 'caution', 'untrusted']
+
+  - name: dq_rule_summary
+    description: One row per quality rule with its owner, how many products it checked and failed, and the scans those products carry.
+    meta:
+      owner: data_engineering
+      published: true
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: rule_id
+        data_type: varchar
+        constraints: [{type: not_null}]
+        data_tests: [unique]
+      - name: rule_name
+        data_type: varchar
+      - name: dimension
+        data_type: varchar
+        description: completeness, validity, consistency, uniqueness or freshness.
+        data_tests:
+          - accepted_values:
+              arguments:
+                values: ['completeness', 'validity', 'consistency', 'uniqueness', 'freshness']
+      - name: severity
+        data_type: varchar
+        description: blocking, major, minor or info.
+      - name: owner_role
+        data_type: varchar
+        description: Role accountable for fixing the rule's failures (see data_owners).
+      - name: description
+        data_type: varchar
+        description: What the rule checks, in French.
+      - name: n_checked
+        data_type: bigint
+        description: Products the rule applied to (a rule applies only when the data it needs exists).
+      - name: n_failed
+        data_type: bigint
+        description: Products that failed the rule.
+      - name: pct_failed
+        data_type: double
+        description: n_failed / n_checked, in percent.
+        data_tests:
+          - value_in_range:
+              arguments:
+                min_value: 0
+                max_value: 100
+      - name: scans_on_failed
+        data_type: bigint
+        description: Unique scans of the failing products.
+      - name: pct_of_all_scans
+        data_type: double
+        description: scans_on_failed as a percent of the scans of all products.
+
+  - name: brand_quality
+    description: Quality scorecard per brand, for brands with at least 50 products in France.
+    meta:
+      owner: owner_product_catalog
+      published: true
+    columns:
+      - name: brand_key
+        description: Normalised brand key.
+        data_tests: [unique, not_null]
+      - name: brand
+        description: Most common spelling of the brand.
+      - name: n_products
+        description: Products of the brand sold in France.
+      - name: scans
+        description: Unique scans of the brand's products.
+      - name: pct_trusted
+        description: Percent of the brand's products with no blocking or major issue.
+      - name: pct_caution
+        description: Percent with at least one major issue and no blocking one.
+      - name: pct_untrusted
+        description: Percent with at least one blocking issue.
+      - name: top_issue_rule
+        description: The rule the brand's products fail most often.
+      - name: top_issue_products
+        description: How many of the brand's products fail that rule.
+
+  - name: dq_exclusion_reasons
+    description: >
+      Why products are not trusted, counted in products. Row 'ALL' holds the number of excluded
+      products; the other rows give, per blocking or major rule, how many excluded products fail it.
+      A product can fail several rules, so those rows do not add up to the 'ALL' row.
+    meta:
+      owner: data_engineering
+      published: true
+    columns:
+      - name: rule_id
+        description: Rule id, or 'ALL' for the total of excluded products.
+        data_tests: [unique, not_null]
+      - name: rule_name
+        description: Short name of the rule.
+      - name: severity
+        description: blocking or major (null on the 'ALL' row).
+      - name: owner_role
+        description: Role accountable for fixing the rule's failures.
+      - name: excluded_products
+        description: Distinct excluded products failing this rule (all excluded products on the 'ALL' row).
+      - name: pct_of_excluded
+        description: excluded_products as a percent of all excluded products.
+
+  - name: dq_history
+    description: Daily failure rate of every rule, appended at each run, to follow quality over time.
+    meta:
+      owner: data_engineering
+      published: true
+    columns:
+      - name: run_date
+        description: Date of the pipeline run.
+      - name: pct_failed
+        description: Failure rate of the rule that day, in percent.
+    data_tests:
+      - unique_combination:
+          arguments:
+            columns: ['run_date', 'rule_id']

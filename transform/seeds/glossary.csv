@@ -1,0 +1,12 @@
+term,definition,source_column,owner_role
+Produit,"Un article identifié par un code-barres, présent dans Open Food Facts, vendu en France et non marqué obsolète.",silver.products.code,owner_product_catalog
+Code-barres,"Identifiant GTIN du produit (EAN-13, EAN-8, UPC-A ou GTIN-14). Il est valide si sa clé de contrôle GS1 est juste.",silver.products.code,steward_product_reference
+Marque,"Première marque déclarée sur la fiche produit.",silver.products.brand,owner_product_catalog
+Catégorie,"Catégorie la plus précise de la fiche (dernier niveau de la hiérarchie Open Food Facts).",silver.products.category,owner_product_catalog
+Valeurs nutritionnelles,"Valeurs pour 100 g ou 100 ml, telles qu'imprimées sur l'emballage, produit tel que vendu.",silver.products.energy_kcal_100g,steward_nutrition
+Nutri-Score,"Note de A à E calculée par Open Food Facts à partir des valeurs nutritionnelles.",silver.products.nutriscore_grade,steward_nutrition
+Scans,"Nombre d'utilisateurs uniques ayant scanné le produit dans l'application Open Food Facts : mesure l'usage réel de la fiche.",silver.products.unique_scans,owner_product_catalog
+Contrôle qualité,"Règle métier vérifiée sur chaque produit (voir dq_rules). Un produit n'est contrôlé par une règle que si les données nécessaires existent.",quality.dq_results.rule_id,data_engineering
+Niveau de confiance,"trusted : aucun problème bloquant ni majeur ; caution : au moins un problème majeur ; untrusted : au moins un problème bloquant.",gold.fct_products.trust_level,data_engineering
+Problème bloquant,"Erreur qui rend la donnée fausse à coup sûr (valeur impossible, incohérence physique, identifiant invalide). Elle ne doit pas être utilisée telle quelle.",governance.dq_rules.severity,data_engineering
+Fiche obsolète,"Fiche non modifiée depuis plus de 5 ans : elle peut ne plus correspondre au produit en rayon.",quality.dq_results.rule_id,owner_product_catalog

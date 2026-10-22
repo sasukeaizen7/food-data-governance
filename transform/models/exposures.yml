@@ -1,0 +1,29 @@
+version: 2
+
+exposures:
+  - name: data_agent
+    label: Quality-aware data agent
+    type: application
+    maturity: medium
+    description: Natural-language Q&A over the published gold tables (agent/). It reports the quality of the data behind every answer.
+    owner: {name: Data Engineering}
+    depends_on:
+      - ref('fct_products')
+      - ref('dq_rule_summary')
+      - ref('brand_quality')
+      - ref('dq_history')
+      - ref('dq_exclusion_reasons')
+      - ref('glossary')
+      - ref('dq_rules')
+      - ref('data_owners')
+
+  - name: quality_report
+    label: Data quality report
+    type: analysis
+    maturity: medium
+    description: Charts and figures in the README (report.py).
+    owner: {name: Data Engineering}
+    depends_on:
+      - ref('dq_rule_summary')
+      - ref('brand_quality')
+      - ref('fct_products')
