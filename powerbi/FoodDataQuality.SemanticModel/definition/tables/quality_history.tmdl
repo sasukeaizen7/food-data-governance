@@ -1,0 +1,48 @@
+table quality_history
+	lineageTag: 9fdfb568-850a-5bed-a63e-6b28693d8b79
+
+	measure 'Last run' = MAX(quality_history[run_date])
+		formatString: dd/mm/yyyy
+		lineageTag: 9028b734-0b3b-5da3-a10a-ccbb49023e92
+
+	column run_date
+		dataType: dateTime
+		formatString: dd/mm/yyyy
+		lineageTag: 07f9ce3c-9a36-5f45-be0d-47854223f9a4
+		summarizeBy: none
+		sourceColumn: run_date
+
+	column rule_id
+		dataType: string
+		lineageTag: 7ad9d178-8e29-57e9-8c0b-ff5a1602af12
+		summarizeBy: none
+		sourceColumn: rule_id
+
+	column n_checked
+		dataType: int64
+		formatString: #,0
+		lineageTag: 653056b4-8d11-539f-b21e-439acf0996a2
+		summarizeBy: none
+		sourceColumn: n_checked
+
+	column n_failed
+		dataType: int64
+		formatString: #,0
+		lineageTag: 662e8754-21a2-5567-bcf5-7917a1f70d76
+		summarizeBy: none
+		sourceColumn: n_failed
+
+	column pct_failed
+		dataType: double
+		formatString: 0.0%
+		lineageTag: cf75e850-1f9d-5019-b606-f2cea1bba412
+		summarizeBy: none
+		sourceColumn: pct_failed
+
+	partition quality_history = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "quality_history.parquet"))
+				in
+				    Source

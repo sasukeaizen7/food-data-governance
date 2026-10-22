@@ -1,0 +1,4 @@
+expression DataFolder = "D:\da\food-data-governance\data\powerbi\" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 884b968a-b6f7-5d1e-86e3-59706c616255
+
+	annotation PBI_ResultType = Text

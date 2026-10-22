@@ -1,0 +1,271 @@
+{
+  "config": "{\"version\": \"5.59\", \"themeCollection\": {\"customTheme\": {\"name\": \"FoodDataQuality.json\", \"version\": \"5.59\", \"type\": 1}}, \"activeSectionIndex\": 0, \"defaultDrillFilterOtherVisuals\": true}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "name": "RegisteredResources",
+        "type": 1,
+        "disabled": false,
+        "items": [
+          {
+            "type": 202,
+            "path": "FoodDataQuality.json",
+            "name": "FoodDataQuality.json"
+          }
+        ]
+      }
+    }
+  ],
+  "sections": [
+    {
+      "name": "overview",
+      "displayName": "Overview",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 0,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"c_products\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Products\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Products\"}, \"Name\": \"products.Products\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Products sold in France'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 265,
+          "y": 20,
+          "z": 0,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"c_trusted\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 265, \"y\": 20, \"z\": 0, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Trusted %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Trusted %\"}, \"Name\": \"products.Trusted %\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Trusted'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 510,
+          "y": 20,
+          "z": 0,
+          "width": 230,
+          "height": 110,
+          "config": "{\"name\": \"c_untrusted\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 510, \"y\": 20, \"z\": 0, \"width\": 230, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Untrusted %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Untrusted %\"}, \"Name\": \"products.Untrusted %\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Untrusted (blocking issue)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 755,
+          "y": 20,
+          "z": 0,
+          "width": 250,
+          "height": 110,
+          "config": "{\"name\": \"c_scans\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 755, \"y\": 20, \"z\": 0, \"width\": 250, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Scans on trusted %\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Scans on trusted %\"}, \"Name\": \"products.Scans on trusted %\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'App scans on trusted products'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 1020,
+          "y": 20,
+          "z": 0,
+          "width": 240,
+          "height": 110,
+          "config": "{\"name\": \"c_run\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 1020, \"y\": 20, \"z\": 0, \"width\": 240, \"height\": 110}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"quality_history.Last run\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"quality_history\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Last run\"}, \"Name\": \"quality_history.Last run\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Last pipeline run'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 145,
+          "z": 0,
+          "width": 380,
+          "height": 290,
+          "config": "{\"name\": \"d_trust\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 145, \"z\": 0, \"width\": 380, \"height\": 290}}], \"singleVisual\": {\"visualType\": \"donutChart\", \"projections\": {\"Category\": [{\"queryRef\": \"products.trust_level\", \"active\": true}], \"Y\": [{\"queryRef\": \"products.Products\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"trust_level\"}, \"Name\": \"products.trust_level\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Products\"}, \"Name\": \"products.Products\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Products by trust level'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"dataPoint\": [{\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#1baf7a'\"}}}}}}, \"selector\": {\"data\": [{\"scopeId\": {\"Comparison\": {\"ComparisonKind\": 0, \"Left\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"products\"}}, \"Property\": \"trust_level\"}}, \"Right\": {\"Literal\": {\"Value\": \"'trusted'\"}}}}}]}}, {\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#eda100'\"}}}}}}, \"selector\": {\"data\": [{\"scopeId\": {\"Comparison\": {\"ComparisonKind\": 0, \"Left\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"products\"}}, \"Property\": \"trust_level\"}}, \"Right\": {\"Literal\": {\"Value\": \"'caution'\"}}}}}]}}, {\"properties\": {\"fill\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#e34948'\"}}}}}}, \"selector\": {\"data\": [{\"scopeId\": {\"Comparison\": {\"ComparisonKind\": 0, \"Left\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"products\"}}, \"Property\": \"trust_level\"}}, \"Right\": {\"Literal\": {\"Value\": \"'untrusted'\"}}}}}]}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 415,
+          "y": 145,
+          "z": 0,
+          "width": 845,
+          "height": 555,
+          "config": "{\"name\": \"b_rules\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 415, \"y\": 145, \"z\": 0, \"width\": 845, \"height\": 555}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"rules.rule_label\", \"active\": true}], \"Y\": [{\"queryRef\": \"rules.Failure rate\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"rules\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"rule_label\"}, \"Name\": \"rules.rule_label\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Failure rate\"}, \"Name\": \"rules.Failure rate\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Failure rate\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Failure rate of each quality rule'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 450,
+          "z": 0,
+          "width": 380,
+          "height": 250,
+          "config": "{\"name\": \"s_owner\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 450, \"z\": 0, \"width\": 380, \"height\": 250}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"owners.title\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"owners\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"title\"}, \"Name\": \"owners.title\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Owner (filters the rules and products they own)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "reasons",
+      "displayName": "Why products are excluded",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 1,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 760,
+          "height": 680,
+          "config": "{\"name\": \"b_reasons\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 760, \"height\": 680}}], \"singleVisual\": {\"visualType\": \"clusteredBarChart\", \"projections\": {\"Category\": [{\"queryRef\": \"exclusion_reasons.rule_name\", \"active\": true}], \"Y\": [{\"queryRef\": \"exclusion_reasons.Excluded products\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"exclusion_reasons\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"rule_name\"}, \"Name\": \"exclusion_reasons.rule_name\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Excluded products\"}, \"Name\": \"exclusion_reasons.Excluded products\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Excluded products\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Excluded products failing each blocking or major rule (a product can fail several)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 795,
+          "y": 20,
+          "z": 0,
+          "width": 465,
+          "height": 680,
+          "config": "{\"name\": \"t_owners\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 795, \"y\": 20, \"z\": 0, \"width\": 465, \"height\": 680}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"owners.title\"}, {\"queryRef\": \"owners.responsibility\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"owners\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"title\"}, \"Name\": \"owners.title\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"responsibility\"}, \"Name\": \"owners.responsibility\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Who fixes what'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"values\": [{\"properties\": {\"wordWrap\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}], \"columnHeaders\": [{\"properties\": {\"wordWrap\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "brands",
+      "displayName": "Brands",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 2,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 300,
+          "height": 680,
+          "config": "{\"name\": \"s_brand\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 300, \"height\": 680}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"brands.brand\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"brands\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"brand\"}, \"Name\": \"brands.brand\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Brand'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 335,
+          "y": 20,
+          "z": 0,
+          "width": 925,
+          "height": 680,
+          "config": "{\"name\": \"t_brands\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 335, \"y\": 20, \"z\": 0, \"width\": 925, \"height\": 680}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"brands.brand\"}, {\"queryRef\": \"brands.n_products\"}, {\"queryRef\": \"brands.scans\"}, {\"queryRef\": \"brands.pct_trusted\"}, {\"queryRef\": \"brands.pct_caution\"}, {\"queryRef\": \"brands.pct_untrusted\"}, {\"queryRef\": \"brands.top_issue_rule\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"brands\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"brand\"}, \"Name\": \"brands.brand\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"n_products\"}, \"Name\": \"brands.n_products\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"scans\"}, \"Name\": \"brands.scans\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"pct_trusted\"}, \"Name\": \"brands.pct_trusted\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"pct_caution\"}, \"Name\": \"brands.pct_caution\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"pct_untrusted\"}, \"Name\": \"brands.pct_untrusted\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"top_issue_rule\"}, \"Name\": \"brands.top_issue_rule\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"scans\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Brand scorecard (Open Food Facts records, not brand data)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "to_fix",
+      "displayName": "Products to fix",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 3,
+      "config": "{}",
+      "filters": "[{\"name\": \"filter_products_trust_level\", \"expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Entity\": \"products\"}}, \"Property\": \"trust_level\"}}, \"filter\": {\"Version\": 2, \"From\": [{\"Name\": \"f\", \"Entity\": \"products\", \"Type\": 0}], \"Where\": [{\"Condition\": {\"In\": {\"Expressions\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"f\"}}, \"Property\": \"trust_level\"}}], \"Values\": [[{\"Literal\": {\"Value\": \"'caution'\"}}], [{\"Literal\": {\"Value\": \"'untrusted'\"}}]]}}}]}, \"type\": \"Categorical\", \"howCreated\": 1}]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 300,
+          "height": 150,
+          "config": "{\"name\": \"s_level\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 300, \"height\": 150}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"products.trust_level\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"trust_level\"}, \"Name\": \"products.trust_level\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Trust level'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 185,
+          "z": 0,
+          "width": 300,
+          "height": 515,
+          "config": "{\"name\": \"s_rule\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 185, \"z\": 0, \"width\": 300, \"height\": 515}}], \"singleVisual\": {\"visualType\": \"slicer\", \"projections\": {\"Values\": [{\"queryRef\": \"rules.rule_label\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"rules\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"rule_label\"}, \"Name\": \"rules.rule_label\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Failed rule'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 335,
+          "y": 20,
+          "z": 0,
+          "width": 925,
+          "height": 680,
+          "config": "{\"name\": \"t_products\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 335, \"y\": 20, \"z\": 0, \"width\": 925, \"height\": 680}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"products.code\"}, {\"queryRef\": \"products.product_name\"}, {\"queryRef\": \"products.brand\"}, {\"queryRef\": \"products.failed_rules\"}, {\"queryRef\": \"products.unique_scans\"}, {\"queryRef\": \"products.trust_level\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"code\"}, \"Name\": \"products.code\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"product_name\"}, \"Name\": \"products.product_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"brand\"}, \"Name\": \"products.brand\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"failed_rules\"}, \"Name\": \"products.failed_rules\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"unique_scans\"}, \"Name\": \"products.unique_scans\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"trust_level\"}, \"Name\": \"products.trust_level\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"unique_scans\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Most-scanned products first: fix these first'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    },
+    {
+      "name": "nutrition",
+      "displayName": "Trusted vs all",
+      "displayOption": 1,
+      "width": 1280,
+      "height": 720,
+      "ordinal": 4,
+      "config": "{}",
+      "filters": "[]",
+      "visualContainers": [
+        {
+          "x": 20,
+          "y": 20,
+          "z": 0,
+          "width": 300,
+          "height": 120,
+          "config": "{\"name\": \"c_sug_t\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 20, \"z\": 0, \"width\": 300, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Avg sugars (trusted)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Avg sugars (trusted)\"}, \"Name\": \"products.Avg sugars (trusted)\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Avg sugars, trusted (g/100g)'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 335,
+          "y": 20,
+          "z": 0,
+          "width": 300,
+          "height": 120,
+          "config": "{\"name\": \"c_sug_a\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 335, \"y\": 20, \"z\": 0, \"width\": 300, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Avg sugars (all)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Avg sugars (all)\"}, \"Name\": \"products.Avg sugars (all)\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Avg sugars, all products'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 650,
+          "y": 20,
+          "z": 0,
+          "width": 300,
+          "height": 120,
+          "config": "{\"name\": \"c_imp\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 650, \"y\": 20, \"z\": 0, \"width\": 300, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Impossible sugar records\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Impossible sugar records\"}, \"Name\": \"products.Impossible sugar records\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Records with > 100 g sugar/100 g'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 965,
+          "y": 20,
+          "z": 0,
+          "width": 295,
+          "height": 120,
+          "config": "{\"name\": \"c_max\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 965, \"y\": 20, \"z\": 0, \"width\": 295, \"height\": 120}}], \"singleVisual\": {\"visualType\": \"card\", \"projections\": {\"Values\": [{\"queryRef\": \"products.Highest declared sugars\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Highest declared sugars\"}, \"Name\": \"products.Highest declared sugars\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Highest sugar declared'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 20,
+          "y": 155,
+          "z": 0,
+          "width": 520,
+          "height": 545,
+          "config": "{\"name\": \"b_nutri\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 20, \"y\": 155, \"z\": 0, \"width\": 520, \"height\": 545}}], \"singleVisual\": {\"visualType\": \"clusteredColumnChart\", \"projections\": {\"Category\": [{\"queryRef\": \"products.nutriscore_grade\", \"active\": true}], \"Y\": [{\"queryRef\": \"products.Avg sugars (trusted, A-E)\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"nutriscore_grade\"}, \"Name\": \"products.nutriscore_grade\"}, {\"Measure\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"Avg sugars (trusted, A-E)\"}, \"Name\": \"products.Avg sugars (trusted, A-E)\"}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Average sugars by Nutri-Score grade, trusted products'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}, \"objects\": {\"labels\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"labelDisplayUnits\": {\"expr\": {\"Literal\": {\"Value\": \"1D\"}}}}}]}}}",
+          "filters": "[]"
+        },
+        {
+          "x": 555,
+          "y": 155,
+          "z": 0,
+          "width": 705,
+          "height": 545,
+          "config": "{\"name\": \"t_extreme\", \"layouts\": [{\"id\": 0, \"position\": {\"x\": 555, \"y\": 155, \"z\": 0, \"width\": 705, \"height\": 545}}], \"singleVisual\": {\"visualType\": \"tableEx\", \"projections\": {\"Values\": [{\"queryRef\": \"products.product_name\"}, {\"queryRef\": \"products.brand\"}, {\"queryRef\": \"products.sugars_100g\"}, {\"queryRef\": \"products.trust_level\"}, {\"queryRef\": \"products.failed_rules\"}]}, \"prototypeQuery\": {\"Version\": 2, \"From\": [{\"Name\": \"t0\", \"Entity\": \"products\", \"Type\": 0}], \"Select\": [{\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"product_name\"}, \"Name\": \"products.product_name\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"brand\"}, \"Name\": \"products.brand\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"sugars_100g\"}, \"Name\": \"products.sugars_100g\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"trust_level\"}, \"Name\": \"products.trust_level\"}, {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"failed_rules\"}, \"Name\": \"products.failed_rules\"}], \"OrderBy\": [{\"Direction\": 2, \"Expression\": {\"Column\": {\"Expression\": {\"SourceRef\": {\"Source\": \"t0\"}}, \"Property\": \"sugars_100g\"}}}]}, \"drillFilterOtherVisuals\": true, \"vcObjects\": {\"title\": [{\"properties\": {\"show\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}, \"text\": {\"expr\": {\"Literal\": {\"Value\": \"'Highest declared sugars: the records behind the gap'\"}}}, \"fontSize\": {\"expr\": {\"Literal\": {\"Value\": \"12D\"}}}, \"fontColor\": {\"solid\": {\"color\": {\"expr\": {\"Literal\": {\"Value\": \"'#0b0b0b'\"}}}}}, \"bold\": {\"expr\": {\"Literal\": {\"Value\": \"true\"}}}}}]}}}",
+          "filters": "[]"
+        }
+      ]
+    }
+  ]
+}

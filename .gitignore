@@ -6,3 +6,6 @@ transform/dbt_packages/
 transform/.user.yml
 __pycache__/
 .pytest_cache/
+# Power BI Desktop local files (cache with data, user settings)
+powerbi/**/.pbi/localSettings.json
+powerbi/**/.pbi/cache.abf

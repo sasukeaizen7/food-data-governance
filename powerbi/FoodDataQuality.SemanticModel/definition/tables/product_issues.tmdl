@@ -1,0 +1,22 @@
+table product_issues
+	lineageTag: efd6691b-7aa5-5680-8c56-bcb1b199b43b
+
+	column code
+		dataType: string
+		lineageTag: a44e3d72-fe54-52eb-b65a-d6d24be349d7
+		summarizeBy: none
+		sourceColumn: code
+
+	column rule_id
+		dataType: string
+		lineageTag: efbfba22-eb72-5ac3-be27-609cf67d79fe
+		summarizeBy: none
+		sourceColumn: rule_id
+
+	partition product_issues = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "product_issues.parquet"))
+				in
+				    Source

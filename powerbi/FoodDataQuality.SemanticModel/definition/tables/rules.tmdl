@@ -1,0 +1,91 @@
+table rules
+	lineageTag: 43fb4811-df6f-5d36-84e4-101042930839
+
+	measure 'Failure rate' = DIVIDE(SUM(rules[n_failed]), SUM(rules[n_checked]))
+		formatString: 0.0%
+		lineageTag: 052f55f1-02c3-5e99-b431-a784abe31f8d
+
+	column rule_id
+		dataType: string
+		lineageTag: cd273d12-920e-58ce-b619-fa10cbe45263
+		summarizeBy: none
+		sourceColumn: rule_id
+
+	column rule_label
+		dataType: string
+		lineageTag: 37a89605-8448-5fe3-8f12-f849cc5c1dc8
+		summarizeBy: none
+		sourceColumn: rule_label
+
+	column rule_name
+		dataType: string
+		lineageTag: 1dbb623d-c99f-5e56-9465-b3644a9c1f8e
+		summarizeBy: none
+		sourceColumn: rule_name
+
+	column dimension
+		dataType: string
+		lineageTag: f9d8bdba-c2d4-59fb-ae89-5b2a4ad49907
+		summarizeBy: none
+		sourceColumn: dimension
+
+	column severity
+		dataType: string
+		lineageTag: c10547d1-aef0-5356-98c3-5e39995b1f74
+		summarizeBy: none
+		sourceColumn: severity
+
+	column owner_role
+		dataType: string
+		lineageTag: 47985482-054e-5d22-8f15-d4638356e064
+		summarizeBy: none
+		sourceColumn: owner_role
+
+	column description
+		dataType: string
+		lineageTag: e4437073-4cbb-5ebf-9449-f4301d47c013
+		summarizeBy: none
+		sourceColumn: description
+
+	column n_checked
+		dataType: int64
+		formatString: #,0
+		lineageTag: a833dfe1-6480-5d56-b653-afe4485658ee
+		summarizeBy: none
+		sourceColumn: n_checked
+
+	column n_failed
+		dataType: int64
+		formatString: #,0
+		lineageTag: 2b81bd1a-d59d-5f2d-ae81-2e812b44f271
+		summarizeBy: none
+		sourceColumn: n_failed
+
+	column pct_failed
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 20f6a27d-c36f-5ce1-86a8-2772550ab3d6
+		summarizeBy: none
+		sourceColumn: pct_failed
+
+	column scans_on_failed
+		dataType: int64
+		formatString: #,0
+		lineageTag: 728b7b3c-6a85-5f08-b297-5554758adcb2
+		summarizeBy: none
+		sourceColumn: scans_on_failed
+
+	column pct_of_all_scans
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 7f0fc3c5-4fe3-5fa4-aee6-2dba0a3cd5f8
+		summarizeBy: none
+		sourceColumn: pct_of_all_scans
+
+	partition rules = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "rules.parquet"))
+				in
+				    Source

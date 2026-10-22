@@ -1,0 +1,52 @@
+table exclusion_reasons
+	lineageTag: 065b4540-bdce-5a74-be8e-9eeea2911bc8
+
+	measure 'Excluded products' = SUM(exclusion_reasons[excluded_products])
+		formatString: #,0
+		lineageTag: a2bfdb40-9255-5538-8705-cf4436dd383a
+
+	column rule_id
+		dataType: string
+		lineageTag: 69b2b978-28b9-5ce6-bfd4-297989507fe6
+		summarizeBy: none
+		sourceColumn: rule_id
+
+	column rule_name
+		dataType: string
+		lineageTag: 01c890f7-3b45-5cf5-8330-8bc7ad6a2544
+		summarizeBy: none
+		sourceColumn: rule_name
+
+	column severity
+		dataType: string
+		lineageTag: 4f05efaa-604d-53a6-83c7-49b25e350fe0
+		summarizeBy: none
+		sourceColumn: severity
+
+	column owner_role
+		dataType: string
+		lineageTag: ad592b62-fd9f-5e9f-b2a4-2a06ec67d56c
+		summarizeBy: none
+		sourceColumn: owner_role
+
+	column excluded_products
+		dataType: int64
+		formatString: #,0
+		lineageTag: f906354e-c46b-58a2-8b20-99c659a9a0c1
+		summarizeBy: none
+		sourceColumn: excluded_products
+
+	column pct_of_excluded
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 9b4ae537-d5bc-54aa-bd26-2cb2ba313d69
+		summarizeBy: none
+		sourceColumn: pct_of_excluded
+
+	partition exclusion_reasons = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "exclusion_reasons.parquet"))
+				in
+				    Source

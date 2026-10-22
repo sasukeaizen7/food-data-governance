@@ -1,4 +1,4 @@
-"""Daily run: ingest -> dbt build (quality checks included) -> snapshot -> publish -> report.
+"""Daily run: ingest -> dbt build (quality checks included) -> snapshot -> publish -> Power BI export -> report.
 
     python run_pipeline.py            # daily run (full export loaded only the first time)
     python run_pipeline.py --reload   # also reload the full export
@@ -53,6 +53,7 @@ def main() -> None:
     step("dbt snapshot (SCD2 history)", [dbt, "snapshot"], transform)
     step("dbt docs", [dbt, "docs", "generate"], transform)
     step("publish data products", [py, "publish.py"])
+    step("export for Power BI", [py, "export_powerbi.py"])
     step("report", [py, "report.py"])
 
 

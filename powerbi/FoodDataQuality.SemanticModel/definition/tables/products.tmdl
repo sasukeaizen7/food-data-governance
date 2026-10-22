@@ -1,0 +1,205 @@
+table products
+	lineageTag: 340e3234-1933-577f-a6a5-ab69691e08c3
+
+	measure Products = COUNTROWS(products)
+		formatString: #,0
+		lineageTag: 41e75230-85dd-513d-b175-fd317b0a2616
+
+	measure 'Trusted products' = CALCULATE([Products], products[trust_level] = "trusted")
+		formatString: #,0
+		lineageTag: 8830a60b-9a6d-55c5-a612-471a2c836d62
+
+	measure 'Caution products' = CALCULATE([Products], products[trust_level] = "caution")
+		formatString: #,0
+		lineageTag: 216526a0-5294-5bd3-843d-d3c8b9fe0bee
+
+	measure 'Untrusted products' = CALCULATE([Products], products[trust_level] = "untrusted")
+		formatString: #,0
+		lineageTag: 0f897dc6-a318-5269-b9fa-e62af0d3a814
+
+	measure 'Trusted %' = DIVIDE([Trusted products], [Products])
+		formatString: 0.0%
+		lineageTag: 8fb3655a-5814-50a1-831b-e28722b1f585
+
+	measure 'Untrusted %' = DIVIDE([Untrusted products], [Products])
+		formatString: 0.0%
+		lineageTag: bb113d18-e140-523d-9756-5b738c1591ba
+
+	measure Scans = SUM(products[unique_scans])
+		formatString: #,0
+		lineageTag: 5c60287f-b64b-5d79-a435-29de69e2e229
+
+	measure 'Scans on trusted %' = DIVIDE(CALCULATE([Scans], products[trust_level] = "trusted"), [Scans])
+		formatString: 0.0%
+		lineageTag: 42ebfab6-c1e3-5fdc-a1d6-46a9083c7104
+
+	measure 'Avg sugars (trusted)' = CALCULATE(AVERAGE(products[sugars_100g]), products[trust_level] = "trusted")
+		formatString: 0.0
+		lineageTag: 76696286-2139-5f3f-b232-5af927ce4a4a
+
+	measure 'Avg sugars (all)' = AVERAGE(products[sugars_100g])
+		formatString: 0.0
+		lineageTag: fb6e3f34-c26a-57eb-8807-7621f350bff0
+
+	measure 'Avg sugars (trusted, A-E)' = CALCULATE([Avg sugars (trusted)], KEEPFILTERS(products[nutriscore_grade] IN {"a", "b", "c", "d", "e"}))
+		formatString: 0.0
+		lineageTag: 80db0631-e20c-546e-837f-01e5374b41af
+
+	measure 'Impossible sugar records' = CALCULATE([Products], products[sugars_100g] > 100)
+		formatString: #,0
+		lineageTag: 7d388315-0618-569a-b88c-2b4e24112a2d
+
+	measure 'Highest declared sugars' = MAX(products[sugars_100g])
+		formatString: 0.00E+00
+		lineageTag: 3c04bb1d-827d-521c-bee2-63e60d4c9106
+
+	column code
+		dataType: string
+		lineageTag: 7864c68a-071f-5341-a03d-5a32a46ba267
+		summarizeBy: none
+		sourceColumn: code
+
+	column product_name
+		dataType: string
+		lineageTag: 053c45cf-df6c-581f-a71c-761bec7969cd
+		summarizeBy: none
+		sourceColumn: product_name
+
+	column brand
+		dataType: string
+		lineageTag: 49b4fd30-d93a-560a-bd71-4a4be86e538f
+		summarizeBy: none
+		sourceColumn: brand
+
+	column brand_key
+		dataType: string
+		lineageTag: 1030215f-2d37-55ec-bd8b-3f0036ff11ca
+		summarizeBy: none
+		sourceColumn: brand_key
+
+	column category
+		dataType: string
+		lineageTag: b2d298f5-ba87-58d4-831e-f600e088659e
+		summarizeBy: none
+		sourceColumn: category
+
+	column last_modified_at
+		dataType: dateTime
+		lineageTag: 45d05f60-6fa4-5d0e-b008-24cecf611fd5
+		summarizeBy: none
+		sourceColumn: last_modified_at
+
+	column unique_scans
+		dataType: int64
+		formatString: #,0
+		lineageTag: 4d18e139-b935-5de4-b666-01d1a74b6af6
+		summarizeBy: none
+		sourceColumn: unique_scans
+
+	column nutriscore_grade
+		dataType: string
+		lineageTag: 8bc99580-e56a-554e-bbce-7c14898c0860
+		summarizeBy: none
+		sourceColumn: nutriscore_grade
+
+	column nova_group
+		dataType: int64
+		formatString: #,0
+		lineageTag: bba48639-8b9d-5e87-82a9-2ae79201ceeb
+		summarizeBy: none
+		sourceColumn: nova_group
+
+	column trust_level
+		dataType: string
+		lineageTag: ddf7f585-bb82-5a63-a9a9-e8f9a614ca46
+		summarizeBy: none
+		sourceColumn: trust_level
+
+	column n_blocking
+		dataType: int64
+		formatString: #,0
+		lineageTag: 0af998b1-f6fc-5d80-8356-41261d78bd56
+		summarizeBy: none
+		sourceColumn: n_blocking
+
+	column n_major
+		dataType: int64
+		formatString: #,0
+		lineageTag: 9db441dd-02af-5778-a81f-ad89957796b6
+		summarizeBy: none
+		sourceColumn: n_major
+
+	column n_minor
+		dataType: int64
+		formatString: #,0
+		lineageTag: 1db7d64d-fc4c-5b97-9b22-9e81cefd65d3
+		summarizeBy: none
+		sourceColumn: n_minor
+
+	column is_internal_code
+		dataType: boolean
+		lineageTag: 50af1faa-c00f-5922-b940-583d6e9c0680
+		summarizeBy: none
+		sourceColumn: is_internal_code
+
+	column failed_rules
+		dataType: string
+		lineageTag: 9c8c1f4c-93db-5588-be64-44b6bcab591e
+		summarizeBy: none
+		sourceColumn: failed_rules
+
+	column energy_kcal_100g
+		dataType: double
+		lineageTag: 45cd4d4b-c793-5d33-b272-deb83212c674
+		summarizeBy: none
+		sourceColumn: energy_kcal_100g
+
+	column fat_100g
+		dataType: double
+		lineageTag: e79e905c-2542-554f-a24c-5625b6ffe8a1
+		summarizeBy: none
+		sourceColumn: fat_100g
+
+	column saturated_fat_100g
+		dataType: double
+		lineageTag: 8869b6b0-ae66-54a1-8029-0ed4fbb94431
+		summarizeBy: none
+		sourceColumn: saturated_fat_100g
+
+	column carbohydrates_100g
+		dataType: double
+		lineageTag: 89bdc64a-e620-5db2-8693-95783bb380cd
+		summarizeBy: none
+		sourceColumn: carbohydrates_100g
+
+	column sugars_100g
+		dataType: double
+		lineageTag: 436603a4-a198-5e3d-a089-e6cf9fb6f6f9
+		summarizeBy: none
+		sourceColumn: sugars_100g
+
+	column fiber_100g
+		dataType: double
+		lineageTag: 56cf4817-6979-5cee-9b1d-438a31031f90
+		summarizeBy: none
+		sourceColumn: fiber_100g
+
+	column proteins_100g
+		dataType: double
+		lineageTag: c6da9a2f-77d1-5800-94e2-d495cf2f0eba
+		summarizeBy: none
+		sourceColumn: proteins_100g
+
+	column salt_100g
+		dataType: double
+		lineageTag: 321f3992-3848-555a-8144-8a1d91cc3b88
+		summarizeBy: none
+		sourceColumn: salt_100g
+
+	partition products = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "products.parquet"))
+				in
+				    Source

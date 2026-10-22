@@ -1,0 +1,24 @@
+relationship 410233ed-5c81-5816-bf71-7e55d6caaf88
+	crossFilteringBehavior: bothDirections
+	fromColumn: product_issues.code
+	toColumn: products.code
+
+relationship 3a54fd56-008b-5904-97bd-5977946fc3be
+	fromColumn: product_issues.rule_id
+	toColumn: rules.rule_id
+
+relationship b8139a9b-e923-518a-8722-ed3ea66c1d95
+	fromColumn: rules.owner_role
+	toColumn: owners.owner_role
+
+relationship 7a3f8eff-eb78-5102-9193-ff67eac008bc
+	fromColumn: quality_history.rule_id
+	toColumn: rules.rule_id
+
+relationship b416b52d-fa8e-5619-a36b-e4b3fabfe5af
+	fromColumn: exclusion_reasons.rule_id
+	toColumn: rules.rule_id
+
+relationship 0de20026-2c6f-543c-9120-533fd6ba824c
+	fromColumn: products.brand_key
+	toColumn: brands.brand_key

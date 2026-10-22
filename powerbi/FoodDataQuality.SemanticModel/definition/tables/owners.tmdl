@@ -1,0 +1,28 @@
+table owners
+	lineageTag: 23a8adec-2893-57fb-a3d9-5a6a43ec0348
+
+	column owner_role
+		dataType: string
+		lineageTag: a67354a0-6ef8-580d-829b-4787c05e49ae
+		summarizeBy: none
+		sourceColumn: owner_role
+
+	column title
+		dataType: string
+		lineageTag: 208bf4e5-a75c-5441-b107-66943fbb7f41
+		summarizeBy: none
+		sourceColumn: title
+
+	column responsibility
+		dataType: string
+		lineageTag: cc90574d-ee7a-541e-aa80-bc59aa1b95f3
+		summarizeBy: none
+		sourceColumn: responsibility
+
+	partition owners = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "owners.parquet"))
+				in
+				    Source

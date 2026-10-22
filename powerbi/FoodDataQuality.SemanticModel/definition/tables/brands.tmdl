@@ -1,0 +1,70 @@
+table brands
+	lineageTag: 10584c09-01ce-59bb-a3bb-e22e6e395a22
+
+	column brand_key
+		dataType: string
+		lineageTag: 4ea7960d-481d-5751-b496-b195d33f039d
+		summarizeBy: none
+		sourceColumn: brand_key
+
+	column brand
+		dataType: string
+		lineageTag: 22f404a3-118a-5fa6-a432-08d7655817be
+		summarizeBy: none
+		sourceColumn: brand
+
+	column n_products
+		dataType: int64
+		formatString: #,0
+		lineageTag: 3353d084-f4d0-5c26-8e14-47aa81ab0b62
+		summarizeBy: none
+		sourceColumn: n_products
+
+	column scans
+		dataType: int64
+		formatString: #,0
+		lineageTag: f13ef613-e763-5aab-a7bb-0379d9918036
+		summarizeBy: none
+		sourceColumn: scans
+
+	column pct_trusted
+		dataType: double
+		formatString: 0.0%
+		lineageTag: bcb3a28e-15de-5980-86c5-30fd6f91cedf
+		summarizeBy: none
+		sourceColumn: pct_trusted
+
+	column pct_caution
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 8d5a73c4-e142-5998-8d26-1058166a7305
+		summarizeBy: none
+		sourceColumn: pct_caution
+
+	column pct_untrusted
+		dataType: double
+		formatString: 0.0%
+		lineageTag: 4543a1f5-08ec-52bf-b81d-e26da4ef32f6
+		summarizeBy: none
+		sourceColumn: pct_untrusted
+
+	column top_issue_rule
+		dataType: string
+		lineageTag: 581507f9-2333-53a9-b9cc-9e68b3cfd3d9
+		summarizeBy: none
+		sourceColumn: top_issue_rule
+
+	column top_issue_products
+		dataType: int64
+		formatString: #,0
+		lineageTag: d25f504e-3687-5529-99cc-539b4d3f985a
+		summarizeBy: none
+		sourceColumn: top_issue_products
+
+	partition brands = m
+		mode: import
+		source =
+				let
+				    Source = Parquet.Document(File.Contents(DataFolder & "brands.parquet"))
+				in
+				    Source
